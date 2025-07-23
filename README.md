@@ -67,14 +67,11 @@ Heart-Disease-Prediction/
    ```bash
    pip install -r requirements.txt
 ````
-
 3. Navigate to the `gui_app` folder:
-
    ```bash
    cd gui_app
    ```
 4. Run the GUI app:
-
    ```bash
    python heart_gui.py
    ```
