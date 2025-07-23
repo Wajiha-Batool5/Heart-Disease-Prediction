@@ -75,6 +75,7 @@ Heart-Disease-Prediction/
    ```bash
    python heart_gui.py
    ```
+----
 
 ---
 
