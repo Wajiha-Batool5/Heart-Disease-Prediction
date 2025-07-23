@@ -35,7 +35,7 @@ style.theme_use("clam")
 style.configure("Card.TFrame", background="#223A5E", relief="raised")  # Dark blue frame
 style.configure("TLabel", background="#223A5E", foreground="#ffffff", font=("Segoe UI", 12))
 style.configure("TButton", font=("Segoe UI", 20, "bold"), foreground="white", background="#8b0000")
-style.map("TButton", background=[("active", "#ffffff")])
+style.map("TButton", background=[("active", "#b56969")])
 
 title_label = ttk.Label(main_frame, text="Heart Disease Prediction", font=("Segoe UI", 24, "bold"), foreground="#ffffff", background="#8b0000")
 title_label.grid(row=0, column=0, columnspan=2, pady=(0, 12))
