@@ -61,6 +61,7 @@ Heart-Disease-Prediction/
 ---
 
 ## 🚀 How to Run the App
+---
 
 1. **Clone or Download** this repository.
 2. Make sure you have all dependencies installed:
@@ -107,4 +108,5 @@ Pull requests are welcome! If you’d like to improve the app or add more featur
 
 **Wajiha Batool**
 Created with passion for both machine learning and impactful health technology.
+
 
