@@ -61,52 +61,59 @@ Heart-Disease-Prediction/
 ---
 
 ## 🚀 How to Run the App
----
 
-1. **Clone or Download** this repository.
-2. Make sure you have all dependencies installed:
+1. **Clone or Download** this repository to your local machine.
+2. Install the required dependencies:
+
    ```bash
    pip install -r requirements.txt
-````
-3. Navigate to the `gui_app` folder:
+   ```
+3. Navigate to the app directory:
+
    ```bash
    cd gui_app
    ```
-4. Run the GUI app:
+4. Launch the GUI:
+
    ```bash
    python heart_gui.py
    ```
-----
 
 ---
 
-## 🔐 Model Inputs & Output
+## 🔍 How It Works
 
-* Input: User-entered health parameters via GUI form
-* Output: Message box with prediction
+* **Input**: User enters health-related parameters (e.g., age, cholesterol level) via a simple GUI form.
+* **Output**: The trained model processes the input and displays one of the following results:
 
-  * ✅ Low Risk of Heart Disease
-  * ⚠️ High Risk of Heart Disease
+  * ✅ **Low Risk of Heart Disease**
+  * ⚠️ **High Risk of Heart Disease**
 
 ---
 
 ## 📁 Important Notes
 
-* All `.pkl` files (model, scaler, and encoders) **must be in the same directory** as your `app.py`.
-* The inputs from the GUI are **preprocessed** to match the model’s expected input format.
-* This is not a substitute for professional medical advice — it’s a demonstration of applied machine learning.
+* Ensure all `.pkl` files — the trained model, scaler, and label encoders — are **in the same folder** as `heart_gui.py`.
+* Inputs are automatically **preprocessed** to match the model's format.
+* ⚠️ **Disclaimer**: This is a machine learning demonstration. It is **not intended for real-world diagnosis** or a substitute for medical advice.
 
 ---
 
-## 🤝 Contributions
+## 🤝 Contributions Welcome
 
-Pull requests are welcome! If you’d like to improve the app or add more features (e.g., data visualization, PDF reports, or multi-language support), feel free to fork this repo and open a PR.
+Want to make it better? You’re encouraged to fork the repo and submit a pull request. Ideas like:
+
+* Adding charts or visual summaries
+* Exporting predictions to PDF
+* Supporting multiple languages
+
+...are all welcome!
 
 ---
 
-## 👤 Author
+## 👩‍💻 Author
 
 **Wajiha Batool**
-Created with passion for both machine learning and impactful health technology.
+Passionate about combining machine learning with meaningful solutions in healthcare and beyond.
 
-
+---
