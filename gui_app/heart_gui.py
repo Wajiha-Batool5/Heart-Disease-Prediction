@@ -81,7 +81,7 @@ categorical_cols = [
 def preprocess_input(data_dict):
     df = pd.DataFrame([data_dict])
     for col in categorical_cols:
-        le_path = f"le_{col.lower().replace(' ', '_')}.pkl"
+        le_path = f"model_training/le_{col.lower().replace(' ', '_')}.pkl"  # <-- update path
         le = joblib.load(le_path)
         df[col] = df[col].str.strip().str.lower()
         if isinstance(le.classes_[0], str):
@@ -89,7 +89,7 @@ def preprocess_input(data_dict):
             df[col] = df[col].map(mapping)
         else:
             raise ValueError(f"LabelEncoder for {col} is not string-based.")
-    scaler = joblib.load("scaler.pkl")
+    scaler = joblib.load("model_training/scaler.pkl")  # <-- update path
     df_scaled = pd.DataFrame(scaler.transform(df), columns=df.columns)
     return df_scaled
 
@@ -103,7 +103,7 @@ def predict():
             else:
                 input_data[label] = float(value)
         processed = preprocess_input(input_data)
-        model = joblib.load("heart_disease_model.pkl")
+        model = joblib.load("model_training/heart_disease_model.pkl")  # <-- update path
         prediction = model.predict(processed)[0]
         result_text = "⚠️ High Risk of Heart Disease" if prediction == 1 else "✅ Low Risk of Heart Disease"
         messagebox.showinfo("Prediction Result", result_text)
