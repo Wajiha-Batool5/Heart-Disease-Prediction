@@ -18,7 +18,7 @@ def resize_bg(event):
     # Resize background image to window size
     new_width = event.width
     new_height = event.height
-    bg_image = Image.open("background.png")
+    bg_image = Image.open(r"C:\Users\Thinkpad T480\OneDrive\Documents\GitHub\Heart-Disease-Prediction\gui_app\background.png")
     bg_image = bg_image.resize((new_width, new_height), Image.Resampling.LANCZOS)
     bg_photo = ImageTk.PhotoImage(bg_image)
     canvas.bg_photo = bg_photo  # Prevent garbage collection
