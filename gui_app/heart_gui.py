@@ -15,7 +15,6 @@ canvas = tk.Canvas(root, highlightthickness=0)
 canvas.pack(fill="both", expand=True)
 
 def resize_bg(event):
-    # Resize background image to window size
     new_width = event.width
     new_height = event.height
     bg_image = Image.open(r"C:\Users\Thinkpad T480\OneDrive\Documents\GitHub\Heart-Disease-Prediction\gui_app\background.png")
@@ -32,7 +31,7 @@ main_frame.place(relx=0.75, rely=0.5, anchor="center", width=520, height=750)
 
 style = ttk.Style()
 style.theme_use("clam")
-style.configure("Card.TFrame", background="#223A5E", relief="raised")  # Dark blue frame
+style.configure("Card.TFrame", background="#223A5E", relief="raised")  
 style.configure("TLabel", background="#223A5E", foreground="#ffffff", font=("Segoe UI", 12))
 style.configure("TButton", font=("Segoe UI", 20, "bold"), foreground="white", background="#8b0000")
 style.map("TButton", background=[("active", "#b56969")])
@@ -81,7 +80,7 @@ categorical_cols = [
 def preprocess_input(data_dict):
     df = pd.DataFrame([data_dict])
     for col in categorical_cols:
-        le_path = f"model_training/le_{col.lower().replace(' ', '_')}.pkl"  # <-- update path
+        le_path = f"model_training/le_{col.lower().replace(' ', '_')}.pkl" 
         le = joblib.load(le_path)
         df[col] = df[col].str.strip().str.lower()
         if isinstance(le.classes_[0], str):
@@ -89,7 +88,7 @@ def preprocess_input(data_dict):
             df[col] = df[col].map(mapping)
         else:
             raise ValueError(f"LabelEncoder for {col} is not string-based.")
-    scaler = joblib.load("model_training/scaler.pkl")  # <-- update path
+    scaler = joblib.load("model_training/scaler.pkl")  
     df_scaled = pd.DataFrame(scaler.transform(df), columns=df.columns)
     return df_scaled
 
@@ -103,7 +102,7 @@ def predict():
             else:
                 input_data[label] = float(value)
         processed = preprocess_input(input_data)
-        model = joblib.load("model_training/heart_disease_model.pkl")  # <-- update path
+        model = joblib.load("model_training/heart_disease_model.pkl")  
         prediction = model.predict(processed)[0]
         result_text = "⚠️ High Risk of Heart Disease" if prediction == 1 else "✅ Low Risk of Heart Disease"
         messagebox.showinfo("Prediction Result", result_text)
